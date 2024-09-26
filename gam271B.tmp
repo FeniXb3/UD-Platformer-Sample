@@ -1,0 +1,93 @@
+[gd_scene load_steps=7 format=3 uid="uid://b3u2u33vk5tjy"]
+
+[ext_resource type="Texture2D" uid="uid://be1ucl4kosd3o" path="res://icon.svg" id="1_id2dm"]
+[ext_resource type="Script" path="res://player.gd" id="2_car15"]
+[ext_resource type="Script" path="res://bottom_edge.gd" id="3_3x7xj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6mxbg"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8xg88"]
+size = Vector2(128, 128)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_65y2u"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Platform" type="StaticBody2D" parent="."]
+position = Vector2(57, 570)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform"]
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("1_id2dm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+shape = SubResource("RectangleShape2D_6mxbg")
+
+[node name="Platform2" type="StaticBody2D" parent="."]
+position = Vector2(336, 560)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform2"]
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("1_id2dm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2"]
+shape = SubResource("RectangleShape2D_6mxbg")
+
+[node name="Platform3" type="StaticBody2D" parent="."]
+position = Vector2(611, 561)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform3"]
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("1_id2dm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3"]
+shape = SubResource("RectangleShape2D_6mxbg")
+
+[node name="Platform4" type="StaticBody2D" parent="."]
+position = Vector2(808, 444)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform4"]
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("1_id2dm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform4"]
+shape = SubResource("RectangleShape2D_6mxbg")
+
+[node name="Platform5" type="StaticBody2D" parent="."]
+position = Vector2(1011, 342)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform5"]
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("1_id2dm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform5"]
+shape = SubResource("RectangleShape2D_6mxbg")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(73, 148)
+collision_layer = 2
+script = ExtResource("2_car15")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = ExtResource("1_id2dm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("RectangleShape2D_8xg88")
+
+[node name="BottomEdge" type="Area2D" parent="."]
+position = Vector2(400, 656)
+collision_mask = 2
+script = ExtResource("3_3x7xj")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomEdge"]
+shape = SubResource("WorldBoundaryShape2D_65y2u")
+
+[connection signal="body_entered" from="BottomEdge" to="BottomEdge" method="_on_body_entered"]

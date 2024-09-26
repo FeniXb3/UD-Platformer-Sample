@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://b3u2u33vk5tjy"]
+
+[ext_resource type="PackedScene" uid="uid://f03p1kytvcr7" path="res://platform.tscn" id="1_33c3h"]
+[ext_resource type="PackedScene" uid="uid://cchdhug3xfi53" path="res://player.tscn" id="2_txh4e"]
+[ext_resource type="PackedScene" uid="uid://c1k87c0tpwxsi" path="res://killzone.tscn" id="3_re4br"]
+[ext_resource type="PackedScene" uid="uid://cco0hdmf66tvr" path="res://item.tscn" id="4_m7so3"]
+[ext_resource type="Script" path="res://item.gd" id="5_oj7w3"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Platform" parent="." instance=ExtResource("1_33c3h")]
+
+[node name="Platform6" parent="." instance=ExtResource("1_33c3h")]
+position = Vector2(336, 562)
+
+[node name="Platform7" parent="." instance=ExtResource("1_33c3h")]
+position = Vector2(612, 562)
+
+[node name="Platform8" parent="." instance=ExtResource("1_33c3h")]
+position = Vector2(808, 443)
+
+[node name="Platform9" parent="." instance=ExtResource("1_33c3h")]
+position = Vector2(1009, 344)
+
+[node name="Player" parent="." instance=ExtResource("2_txh4e")]
+
+[node name="Killzone" parent="." instance=ExtResource("3_re4br")]
+position = Vector2(737, 777)
+
+[node name="Item2" parent="." instance=ExtResource("4_m7so3")]
+collision_mask = 2
+script = ExtResource("5_oj7w3")
+
+[connection signal="body_entered" from="Item2" to="Item2" method="_on_body_entered"]
