@@ -1,23 +1,70 @@
-[gd_scene load_steps=4 format=3 uid="uid://cco0hdmf66tvr"]
+[gd_scene load_steps=13 format=3 uid="uid://cco0hdmf66tvr"]
 
-[ext_resource type="Texture2D" uid="uid://be1ucl4kosd3o" path="res://icon.svg" id="1_iwsph"]
+[ext_resource type="Texture2D" uid="uid://d22natk1k12tr" path="res://kenney_jumper-pack/PNG/Items/gold_1.png" id="1_gc5ph"]
+[ext_resource type="Texture2D" uid="uid://bqsags1o64f4o" path="res://kenney_jumper-pack/PNG/Items/gold_2.png" id="2_5bhxb"]
+[ext_resource type="Texture2D" uid="uid://bqhkh52wr2wwo" path="res://kenney_jumper-pack/PNG/Items/gold_3.png" id="3_qns7v"]
+[ext_resource type="Texture2D" uid="uid://dr1vt3n5uk0en" path="res://kenney_jumper-pack/PNG/Items/gold_4.png" id="4_waip1"]
+[ext_resource type="Texture2D" uid="uid://c6n43hle53q4c" path="res://kenney_jumper-pack/PNG/Particles/particle_beige.png" id="5_sjfmt"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_76b7b"]
-size = Vector2(128, 128)
+[sub_resource type="Animation" id="Animation_uvled"]
+resource_name = "rotate"
+length = 0.75
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.5, 0.733333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_gc5ph"), ExtResource("2_5bhxb"), ExtResource("3_qns7v"), ExtResource("4_waip1")]
+}
+
+[sub_resource type="Animation" id="Animation_har3d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_gc5ph")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ygf60"]
+_data = {
+"RESET": SubResource("Animation_har3d"),
+"rotate": SubResource("Animation_uvled")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oejbq"]
+radius = 45.0
+
+[sub_resource type="Curve" id="Curve_bofjp"]
+_data = [Vector2(0, 0.0421298), 0.0, 0.0, 0, 0, Vector2(0.51483, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_3sm4y"]
+curve = SubResource("Curve_bofjp")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_g3eoq"]
-lifetime_randomness = 1.0
+particle_flag_rotate_y = true
 particle_flag_disable_z = true
-velocity_pivot = Vector3(30, 20, 0)
-direction = Vector3(40, 0, 0)
-spread = 70.715
-angular_velocity_min = -1.60933e-05
-angular_velocity_max = 332.9
-gravity = Vector3(0, 9.8, 0)
-linear_accel_min = -60.22
-linear_accel_max = 63.44
+direction = Vector3(0, 0, 0)
+spread = 90.0
+initial_velocity_min = -100.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 0, 0)
 scale_min = 0.1
 scale_max = 0.25
+alpha_curve = SubResource("CurveTexture_3sm4y")
 
 [node name="Item" type="Area2D"]
 position = Vector2(1007, 71)
@@ -25,17 +72,22 @@ metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.768613, 0.82, 0.0492, 1)
-texture = ExtResource("1_iwsph")
+texture = ExtResource("1_gc5ph")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_ygf60")
+}
+autoplay = "rotate"
+speed_scale = 3.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_76b7b")
+shape = SubResource("CircleShape2D_oejbq")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 emitting = false
-amount = 15
+amount = 100
 process_material = SubResource("ParticleProcessMaterial_g3eoq")
-texture = ExtResource("1_iwsph")
-lifetime = 8.71
+texture = ExtResource("5_sjfmt")
 one_shot = true
 explosiveness = 1.0
-trail_lifetime = 2.4

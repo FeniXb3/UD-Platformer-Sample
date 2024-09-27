@@ -1,17 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://f03p1kytvcr7"]
 
-[ext_resource type="Texture2D" uid="uid://be1ucl4kosd3o" path="res://icon.svg" id="1_ve3u0"]
+[ext_resource type="Texture2D" uid="uid://b6k5fuqyog2xr" path="res://kenney_jumper-pack/PNG/Environment/ground_grass_small.png" id="1_58dth"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6mxbg"]
-size = Vector2(128, 128)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ice3o"]
+size = Vector2(198.5, 98.75)
 
 [node name="Platform" type="StaticBody2D"]
-position = Vector2(57, 570)
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.180392, 1, 0.247059, 1)
-texture = ExtResource("1_ve3u0")
+texture = ExtResource("1_58dth")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_6mxbg")
+position = Vector2(0.75, 0.625)
+shape = SubResource("RectangleShape2D_ice3o")
