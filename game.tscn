@@ -68,6 +68,7 @@ position = Vector2(23, 409)
 position = Vector2(78, 599)
 
 [node name="Platform6" parent="Platforms" instance=ExtResource("1_33c3h")]
+visible = false
 position = Vector2(357, 591)
 
 [node name="Platform7" parent="Platforms" instance=ExtResource("1_33c3h")]
@@ -79,7 +80,16 @@ position = Vector2(829, 472)
 [node name="Platform9" parent="Platforms" instance=ExtResource("1_33c3h")]
 position = Vector2(1009, 344)
 
+[node name="Platform2" parent="Platforms" instance=ExtResource("1_33c3h")]
+position = Vector2(742, 52)
+
+[node name="Platform10" parent="Platforms" instance=ExtResource("1_33c3h")]
+position = Vector2(1285, 265)
+
 [node name="Player" parent="." instance=ExtResource("2_txh4e")]
+
+[node name="Player2" parent="." instance=ExtResource("2_txh4e")]
+position = Vector2(375, 197)
 
 [node name="Killzone" parent="." instance=ExtResource("3_re4br")]
 position = Vector2(154, 1352)
