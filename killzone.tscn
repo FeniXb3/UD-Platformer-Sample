@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://c1k87c0tpwxsi"]
+[gd_scene load_steps=3 format=3 uid="uid://c1k87c0tpwxsi"]
 
-[ext_resource type="Script" path="res://bottom_edge.gd" id="1_r241q"]
-[ext_resource type="Texture2D" uid="uid://be1ucl4kosd3o" path="res://icon.svg" id="2_eow4v"]
+[ext_resource type="Script" path="res://killzone.gd" id="1_r241q"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_65y2u"]
 
@@ -10,12 +9,11 @@ position = Vector2(400, 656)
 collision_mask = 2
 script = ExtResource("1_r241q")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(431, 33.5)
-scale = Vector2(19.9375, 0.476563)
-texture = ExtResource("2_eow4v")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("WorldBoundaryShape2D_65y2u")
 
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

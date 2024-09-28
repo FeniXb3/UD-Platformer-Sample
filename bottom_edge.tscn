@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://byuygxbhhhr6i"]
+[gd_scene load_steps=6 format=3 uid="uid://b7opry4ttormc"]
 
 [ext_resource type="PackedScene" uid="uid://f03p1kytvcr7" path="res://platform.tscn" id="1_fyh63"]
 [ext_resource type="PackedScene" uid="uid://cchdhug3xfi53" path="res://player.tscn" id="2_yqx64"]
-[ext_resource type="Script" path="res://bottom_edge.gd" id="3_sppi4"]
+[ext_resource type="Script" path="res://killzone.gd" id="3_xj616"]
 [ext_resource type="Texture2D" uid="uid://be1ucl4kosd3o" path="res://icon.svg" id="4_hrxuk"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_65y2u"]
@@ -28,7 +28,7 @@ position = Vector2(1009, 344)
 [node name="BottomEdge" type="Area2D" parent="."]
 position = Vector2(400, 656)
 collision_mask = 2
-script = ExtResource("3_sppi4")
+script = ExtResource("3_xj616")
 
 [node name="Sprite2D" type="Sprite2D" parent="BottomEdge"]
 position = Vector2(431, 33.5)
