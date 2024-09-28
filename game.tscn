@@ -61,6 +61,11 @@ position = Vector2(0, -451)
 texture = ExtResource("4_ui3jm")
 centered = false
 
+[node name="Player" parent="." instance=ExtResource("2_txh4e")]
+
+[node name="Player2" parent="." instance=ExtResource("2_txh4e")]
+position = Vector2(354, 207)
+
 [node name="Platforms" type="Node2D" parent="."]
 position = Vector2(23, 409)
 
@@ -68,6 +73,7 @@ position = Vector2(23, 409)
 position = Vector2(78, 599)
 
 [node name="Platform6" parent="Platforms" instance=ExtResource("1_33c3h")]
+visible = false
 position = Vector2(357, 591)
 
 [node name="Platform7" parent="Platforms" instance=ExtResource("1_33c3h")]
@@ -78,8 +84,6 @@ position = Vector2(829, 472)
 
 [node name="Platform9" parent="Platforms" instance=ExtResource("1_33c3h")]
 position = Vector2(1009, 344)
-
-[node name="Player" parent="." instance=ExtResource("2_txh4e")]
 
 [node name="Killzone" parent="." instance=ExtResource("3_re4br")]
 position = Vector2(154, 1352)
