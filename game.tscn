@@ -16,7 +16,7 @@
 
 [node name="Sky" type="Parallax2D" parent="Background"]
 scroll_scale = Vector2(0.1, 1)
-repeat_size = Vector2(2048, 0)
+repeat_size = Vector2(2048, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/Sky"]
 texture = ExtResource("6_qg458")
