@@ -12,37 +12,37 @@
 
 [node name="Game" type="Node2D"]
 
-[node name="Parallax2D" type="Parallax2D" parent="."]
+[node name="Sky" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.1, 1)
-repeat_size = Vector2(1, 1)
+repeat_size = Vector2(2048, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Sky"]
 texture = ExtResource("6_qg458")
 centered = false
 
-[node name="Parallax2D2" type="Parallax2D" parent="."]
+[node name="Clouds" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.2, 1)
-repeat_size = Vector2(1, 0)
+repeat_size = Vector2(2048, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2"]
+[node name="Sprite2D" type="Sprite2D" parent="Clouds"]
 position = Vector2(0, -451)
 texture = ExtResource("2_224c4")
 centered = false
 
-[node name="Parallax2D3" type="Parallax2D" parent="."]
+[node name="DistantHills" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.3, 1)
-repeat_size = Vector2(1, 0)
+repeat_size = Vector2(2048, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3"]
+[node name="Sprite2D" type="Sprite2D" parent="DistantHills"]
 position = Vector2(0, -451)
 texture = ExtResource("3_l65th")
 centered = false
 
-[node name="Parallax2D4" type="Parallax2D" parent="."]
+[node name="Hills" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.7, 1)
-repeat_size = Vector2(1, 0)
+repeat_size = Vector2(2048, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D4"]
+[node name="Sprite2D" type="Sprite2D" parent="Hills"]
 position = Vector2(0, -451)
 texture = ExtResource("4_ui3jm")
 centered = false
@@ -51,16 +51,16 @@ centered = false
 position = Vector2(0, 588)
 
 [node name="Platform" parent="Platforms" instance=ExtResource("1_33c3h")]
-position = Vector2(57, 570)
+position = Vector2(78, 599)
 
 [node name="Platform6" parent="Platforms" instance=ExtResource("1_33c3h")]
-position = Vector2(336, 562)
+position = Vector2(357, 591)
 
 [node name="Platform7" parent="Platforms" instance=ExtResource("1_33c3h")]
-position = Vector2(612, 562)
+position = Vector2(633, 591)
 
 [node name="Platform8" parent="Platforms" instance=ExtResource("1_33c3h")]
-position = Vector2(808, 443)
+position = Vector2(829, 472)
 
 [node name="Platform9" parent="Platforms" instance=ExtResource("1_33c3h")]
 position = Vector2(1009, 344)
@@ -68,7 +68,7 @@ position = Vector2(1009, 344)
 [node name="Player" parent="." instance=ExtResource("2_txh4e")]
 
 [node name="Killzone" parent="." instance=ExtResource("3_re4br")]
-position = Vector2(737, 1365)
+position = Vector2(720, 1801)
 
 [node name="Item2" parent="." instance=ExtResource("4_m7so3")]
 position = Vector2(1007, 659)
