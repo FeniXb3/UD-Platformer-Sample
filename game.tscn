@@ -12,38 +12,40 @@
 
 [node name="Game" type="Node2D"]
 
-[node name="Sky" type="Parallax2D" parent="."]
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Sky" type="Parallax2D" parent="Background"]
 scroll_scale = Vector2(0.1, 1)
 repeat_size = Vector2(2048, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="Sky"]
+[node name="Sprite2D" type="Sprite2D" parent="Background/Sky"]
 texture = ExtResource("6_qg458")
 centered = false
 
-[node name="Clouds" type="Parallax2D" parent="."]
+[node name="Clouds" type="Parallax2D" parent="Background"]
 scroll_scale = Vector2(0.2, 1)
 repeat_size = Vector2(2048, 0)
 autoscroll = Vector2(10, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="Clouds"]
+[node name="Sprite2D" type="Sprite2D" parent="Background/Clouds"]
 position = Vector2(0, -451)
 texture = ExtResource("2_224c4")
 centered = false
 
-[node name="DistantHills" type="Parallax2D" parent="."]
+[node name="DistantHills" type="Parallax2D" parent="Background"]
 scroll_scale = Vector2(0.3, 1)
 repeat_size = Vector2(2048, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="DistantHills"]
+[node name="Sprite2D" type="Sprite2D" parent="Background/DistantHills"]
 position = Vector2(0, -451)
 texture = ExtResource("3_l65th")
 centered = false
 
-[node name="Hills" type="Parallax2D" parent="."]
+[node name="Hills" type="Parallax2D" parent="Background"]
 scroll_scale = Vector2(0.7, 1)
 repeat_size = Vector2(2048, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="Hills"]
+[node name="Sprite2D" type="Sprite2D" parent="Background/Hills"]
 position = Vector2(0, -451)
 texture = ExtResource("4_ui3jm")
 centered = false
