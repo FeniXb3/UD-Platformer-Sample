@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b3u2u33vk5tjy"]
+[gd_scene load_steps=12 format=3 uid="uid://b3u2u33vk5tjy"]
 
 [ext_resource type="PackedScene" uid="uid://f03p1kytvcr7" path="res://platform.tscn" id="1_33c3h"]
 [ext_resource type="Texture2D" uid="uid://vbsqcvcalhg3" path="res://kenney_jumper-pack/PNG/Background/bg_layer2.png" id="2_224c4"]
@@ -9,6 +9,17 @@
 [ext_resource type="Texture2D" uid="uid://bfapujp5p6spg" path="res://kenney_jumper-pack/PNG/Background/bg_layer4.png" id="4_ui3jm"]
 [ext_resource type="Script" path="res://item.gd" id="5_oj7w3"]
 [ext_resource type="Texture2D" uid="uid://bvld0tgwaha2b" path="res://kenney_jumper-pack/PNG/Background/bg_layer1.png" id="6_qg458"]
+
+[sub_resource type="Gradient" id="Gradient_bxs5i"]
+offsets = PackedFloat32Array(0.276151, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_r1llv"]
+gradient = SubResource("Gradient_bxs5i")
+width = 2048
+height = 1024
+fill_from = Vector2(0.5, 1)
+fill_to = Vector2(0.5, 0)
 
 [node name="Game" type="Node2D"]
 
@@ -51,7 +62,7 @@ texture = ExtResource("4_ui3jm")
 centered = false
 
 [node name="Platforms" type="Node2D" parent="."]
-position = Vector2(0, 588)
+position = Vector2(23, 409)
 
 [node name="Platform" parent="Platforms" instance=ExtResource("1_33c3h")]
 position = Vector2(78, 599)
@@ -71,10 +82,20 @@ position = Vector2(1009, 344)
 [node name="Player" parent="." instance=ExtResource("2_txh4e")]
 
 [node name="Killzone" parent="." instance=ExtResource("3_re4br")]
-position = Vector2(720, 1801)
+position = Vector2(154, 1352)
+
+[node name="Parallax2D" type="Parallax2D" parent="Killzone"]
+scroll_offset = Vector2(0, -512)
+repeat_size = Vector2(2048, 0)
+repeat_times = 2
+
+[node name="TextureRect" type="TextureRect" parent="Killzone/Parallax2D"]
+offset_right = 64.0
+offset_bottom = 64.0
+texture = SubResource("GradientTexture2D_r1llv")
 
 [node name="Item2" parent="." instance=ExtResource("4_m7so3")]
-position = Vector2(1007, 659)
+position = Vector2(1030, 480)
 collision_mask = 2
 script = ExtResource("5_oj7w3")
 
