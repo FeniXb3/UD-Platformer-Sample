@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b3u2u33vk5tjy"]
+[gd_scene load_steps=14 format=3 uid="uid://b3u2u33vk5tjy"]
 
 [ext_resource type="PackedScene" uid="uid://f03p1kytvcr7" path="res://platform.tscn" id="1_33c3h"]
 [ext_resource type="Texture2D" uid="uid://vbsqcvcalhg3" path="res://kenney_jumper-pack/PNG/Background/bg_layer2.png" id="2_224c4"]
@@ -9,6 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://bfapujp5p6spg" path="res://kenney_jumper-pack/PNG/Background/bg_layer4.png" id="4_ui3jm"]
 [ext_resource type="Script" path="res://item.gd" id="5_oj7w3"]
 [ext_resource type="Texture2D" uid="uid://bvld0tgwaha2b" path="res://kenney_jumper-pack/PNG/Background/bg_layer1.png" id="6_qg458"]
+[ext_resource type="Texture2D" uid="uid://cn6je6afbe41s" path="res://kenney_jumper-pack/PNG/Environment/ground_cake_broken.png" id="7_dti0u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjeo2"]
+size = Vector2(374, 98.75)
 
 [sub_resource type="Gradient" id="Gradient_bxs5i"]
 offsets = PackedFloat32Array(0.276151, 1)
@@ -30,6 +34,7 @@ scroll_scale = Vector2(0.1, 1)
 repeat_size = Vector2(2048, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/Sky"]
+modulate = Color(0.881497, 0.735382, 0.944749, 1)
 texture = ExtResource("6_qg458")
 centered = false
 
@@ -39,6 +44,7 @@ repeat_size = Vector2(2048, 0)
 autoscroll = Vector2(10, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/Clouds"]
+modulate = Color(0.866667, 0.505882, 0.6, 0.309804)
 position = Vector2(0, -451)
 texture = ExtResource("2_224c4")
 centered = false
@@ -48,6 +54,7 @@ scroll_scale = Vector2(0.3, 1)
 repeat_size = Vector2(2048, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/DistantHills"]
+modulate = Color(0, 0.460143, 0.0816088, 1)
 position = Vector2(0, -451)
 texture = ExtResource("3_l65th")
 centered = false
@@ -57,14 +64,12 @@ scroll_scale = Vector2(0.7, 1)
 repeat_size = Vector2(2048, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/Hills"]
+modulate = Color(0.00392157, 1, 0.321569, 1)
 position = Vector2(0, -451)
 texture = ExtResource("4_ui3jm")
 centered = false
 
 [node name="Player" parent="." instance=ExtResource("2_txh4e")]
-
-[node name="Player2" parent="." instance=ExtResource("2_txh4e")]
-position = Vector2(354, 207)
 
 [node name="Platforms" type="Node2D" parent="."]
 position = Vector2(23, 409)
@@ -78,6 +83,13 @@ position = Vector2(357, 591)
 
 [node name="Platform7" parent="Platforms" instance=ExtResource("1_33c3h")]
 position = Vector2(633, 591)
+
+[node name="Sprite2D" parent="Platforms/Platform7" index="0"]
+texture = ExtResource("7_dti0u")
+
+[node name="CollisionShape2D" parent="Platforms/Platform7" index="1"]
+position = Vector2(-3, 0.625)
+shape = SubResource("RectangleShape2D_bjeo2")
 
 [node name="Platform8" parent="Platforms" instance=ExtResource("1_33c3h")]
 position = Vector2(829, 472)
@@ -104,3 +116,5 @@ collision_mask = 2
 script = ExtResource("5_oj7w3")
 
 [connection signal="body_entered" from="Item2" to="Item2" method="_on_body_entered"]
+
+[editable path="Platforms/Platform7"]
