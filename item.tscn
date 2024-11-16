@@ -6,6 +6,21 @@
 [ext_resource type="Texture2D" uid="uid://dr1vt3n5uk0en" path="res://kenney_jumper-pack/PNG/Items/gold_4.png" id="4_waip1"]
 [ext_resource type="Texture2D" uid="uid://c6n43hle53q4c" path="res://kenney_jumper-pack/PNG/Particles/particle_beige.png" id="5_sjfmt"]
 
+[sub_resource type="Animation" id="Animation_har3d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_gc5ph")]
+}
+
 [sub_resource type="Animation" id="Animation_uvled"]
 resource_name = "rotate"
 length = 0.75
@@ -21,21 +36,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("1_gc5ph"), ExtResource("2_5bhxb"), ExtResource("3_qns7v"), ExtResource("4_waip1")]
-}
-
-[sub_resource type="Animation" id="Animation_har3d"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("1_gc5ph")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ygf60"]
