@@ -4,5 +4,6 @@ extends Area2D
 
 
 func _on_body_entered(body: Node2D) -> void:
-	sprite_2d.hide()
 	gpu_particles_2d.emitting = true
+	sprite_2d.hide()
+	collision_mask = 0
