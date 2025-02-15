@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cco0hdmf66tvr"]
+[gd_scene load_steps=15 format=3 uid="uid://cco0hdmf66tvr"]
 
 [ext_resource type="Texture2D" uid="uid://d22natk1k12tr" path="res://kenney_jumper-pack/PNG/Items/gold_1.png" id="1_gc5ph"]
 [ext_resource type="Texture2D" uid="uid://bqsags1o64f4o" path="res://kenney_jumper-pack/PNG/Items/gold_2.png" id="2_5bhxb"]
@@ -54,16 +54,27 @@ point_count = 3
 [sub_resource type="CurveTexture" id="CurveTexture_3sm4y"]
 curve = SubResource("Curve_bofjp")
 
+[sub_resource type="Gradient" id="Gradient_vtk45"]
+offsets = PackedFloat32Array(0, 0.530055, 1)
+colors = PackedColorArray(1, 0, 0, 1, 0.705882, 0.443137, 0.152941, 1, 1, 1, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_epu4p"]
+gradient = SubResource("Gradient_vtk45")
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_g3eoq"]
+lifetime_randomness = 1.0
 particle_flag_rotate_y = true
 particle_flag_disable_z = true
-direction = Vector3(0, 0, 0)
+emission_shape = 1
+emission_sphere_radius = 20.0
+direction = Vector3(0, -250, 0)
 spread = 90.0
-initial_velocity_min = -100.0
-initial_velocity_max = 100.0
-gravity = Vector3(0, 0, 0)
+initial_velocity_min = 89.96
+initial_velocity_max = 289.96
+gravity = Vector3(0, 100, 0)
 scale_min = 0.1
 scale_max = 0.25
+color_ramp = SubResource("GradientTexture1D_epu4p")
 alpha_curve = SubResource("CurveTexture_3sm4y")
 
 [node name="Item" type="Area2D"]
@@ -86,8 +97,8 @@ shape = SubResource("CircleShape2D_oejbq")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 emitting = false
-amount = 100
+amount = 700
 process_material = SubResource("ParticleProcessMaterial_g3eoq")
 texture = ExtResource("5_sjfmt")
+lifetime = 3.0
 one_shot = true
-explosiveness = 1.0
