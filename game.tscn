@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b3u2u33vk5tjy"]
+[gd_scene load_steps=11 format=3 uid="uid://b3u2u33vk5tjy"]
 
 [ext_resource type="PackedScene" uid="uid://f03p1kytvcr7" path="res://platform.tscn" id="1_33c3h"]
 [ext_resource type="Texture2D" uid="uid://vbsqcvcalhg3" path="res://kenney_jumper-pack/PNG/Background/bg_layer2.png" id="2_224c4"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://c1k87c0tpwxsi" path="res://killzone.tscn" id="3_re4br"]
 [ext_resource type="PackedScene" uid="uid://cco0hdmf66tvr" path="res://item.tscn" id="4_m7so3"]
 [ext_resource type="Texture2D" uid="uid://bfapujp5p6spg" path="res://kenney_jumper-pack/PNG/Background/bg_layer4.png" id="4_ui3jm"]
-[ext_resource type="Script" path="res://item.gd" id="5_oj7w3"]
 [ext_resource type="Texture2D" uid="uid://bvld0tgwaha2b" path="res://kenney_jumper-pack/PNG/Background/bg_layer1.png" id="6_qg458"]
 
 [sub_resource type="Gradient" id="Gradient_bxs5i"]
@@ -94,9 +93,8 @@ offset_right = 64.0
 offset_bottom = 64.0
 texture = SubResource("GradientTexture2D_r1llv")
 
-[node name="Item2" parent="." instance=ExtResource("4_m7so3")]
+[node name="Item" parent="." instance=ExtResource("4_m7so3")]
 position = Vector2(1030, 480)
 collision_mask = 2
-script = ExtResource("5_oj7w3")
 
-[connection signal="body_entered" from="Item2" to="Item2" method="_on_body_entered"]
+[connection signal="body_entered" from="Item" to="Item" method="_on_body_entered"]

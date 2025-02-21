@@ -4,6 +4,21 @@
 [ext_resource type="Texture2D" uid="uid://b1ue0poamrjo0" path="res://kenney_jumper-pack/PNG/Players/bunny1_ready.png" id="2_lxyvi"]
 [ext_resource type="Texture2D" uid="uid://cv65t5lorntr" path="res://kenney_jumper-pack/PNG/Players/bunny1_stand.png" id="2_uom28"]
 
+[sub_resource type="Animation" id="Animation_aaom3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_lxyvi")]
+}
+
 [sub_resource type="Animation" id="Animation_sihw8"]
 resource_name = "idle"
 length = 0.5
@@ -19,21 +34,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [ExtResource("2_lxyvi"), ExtResource("2_uom28")]
-}
-
-[sub_resource type="Animation" id="Animation_aaom3"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("2_lxyvi")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_si6oq"]

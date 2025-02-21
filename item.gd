@@ -6,3 +6,6 @@ extends Area2D
 func _on_body_entered(body: Node2D) -> void:
 	sprite_2d.hide()
 	gpu_particles_2d.emitting = true
+
+func _on_gpu_particles_2d_finished() -> void:
+	queue_free()
