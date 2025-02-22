@@ -23,6 +23,8 @@ fill_to = Vector2(0.5, 0)
 [node name="Game" type="Node2D"]
 
 [node name="Background" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="Sky" type="Parallax2D" parent="Background"]
 scroll_scale = Vector2(0.1, 1)
@@ -82,6 +84,8 @@ position = Vector2(1009, 344)
 
 [node name="Killzone" parent="." instance=ExtResource("3_re4br")]
 position = Vector2(154, 1352)
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="Parallax2D" type="Parallax2D" parent="Killzone"]
 scroll_offset = Vector2(0, -512)
