@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://da8mw71uqkdvh"]
+
+[ext_resource type="Texture2D" uid="uid://bbslwcygkim75" path="res://kenney_jumper-pack/PNG/Environment/ground_stone_broken.png" id="1_y72uv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ice3o"]
+size = Vector2(370, 98.75)
+
+[node name="Platform" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_y72uv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 0.625)
+shape = SubResource("RectangleShape2D_ice3o")
