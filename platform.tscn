@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://f03p1kytvcr7"]
 
-[ext_resource type="Texture2D" uid="uid://b6k5fuqyog2xr" path="res://kenney_jumper-pack/PNG/Environment/ground_grass_small.png" id="1_58dth"]
+[ext_resource type="Texture2D" uid="uid://bngdwuwnf3tpv" path="res://kenney_jumper-pack/PNG/Environment/ground_cake_small.png" id="1_6j0a1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ice3o"]
 size = Vector2(198.5, 98.75)
@@ -8,7 +8,7 @@ size = Vector2(198.5, 98.75)
 [node name="Platform" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_58dth")
+texture = ExtResource("1_6j0a1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.75, 0.625)

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfovmglvb4xnu"]
+
+[ext_resource type="Texture2D" uid="uid://b2k3arqc88v2s" path="res://kenney_jumper-pack/PNG/Environment/ground_sand_broken.png" id="1_7cy6m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ice3o"]
+size = Vector2(380, 98.75)
+
+[node name="Platform" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7cy6m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.625)
+shape = SubResource("RectangleShape2D_ice3o")

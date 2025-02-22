@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b3u2u33vk5tjy"]
+[gd_scene load_steps=13 format=3 uid="uid://b3u2u33vk5tjy"]
 
 [ext_resource type="PackedScene" uid="uid://f03p1kytvcr7" path="res://platform.tscn" id="1_33c3h"]
 [ext_resource type="Texture2D" uid="uid://vbsqcvcalhg3" path="res://kenney_jumper-pack/PNG/Background/bg_layer2.png" id="2_224c4"]
@@ -7,7 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://c1k87c0tpwxsi" path="res://killzone.tscn" id="3_re4br"]
 [ext_resource type="PackedScene" uid="uid://cco0hdmf66tvr" path="res://item.tscn" id="4_m7so3"]
 [ext_resource type="Texture2D" uid="uid://bfapujp5p6spg" path="res://kenney_jumper-pack/PNG/Background/bg_layer4.png" id="4_ui3jm"]
+[ext_resource type="Texture2D" uid="uid://mdkilip57pcc" path="res://kenney_jumper-pack/PNG/Environment/cactus.png" id="6_dapgu"]
 [ext_resource type="Texture2D" uid="uid://bvld0tgwaha2b" path="res://kenney_jumper-pack/PNG/Background/bg_layer1.png" id="6_qg458"]
+[ext_resource type="PackedScene" uid="uid://dfovmglvb4xnu" path="res://sand_platform.tscn" id="7_46npw"]
 
 [sub_resource type="Gradient" id="Gradient_bxs5i"]
 offsets = PackedFloat32Array(0.276151, 1)
@@ -66,10 +68,22 @@ centered = false
 position = Vector2(23, 409)
 
 [node name="Platform" parent="Platforms" instance=ExtResource("1_33c3h")]
-position = Vector2(78, 599)
+position = Vector2(2, 602)
 
 [node name="Platform6" parent="Platforms" instance=ExtResource("1_33c3h")]
 position = Vector2(357, 591)
+
+[node name="Platform10" parent="Platforms" instance=ExtResource("1_33c3h")]
+position = Vector2(1278, 454)
+
+[node name="Platform11" parent="Platforms" instance=ExtResource("1_33c3h")]
+position = Vector2(1604, 514)
+
+[node name="Platform12" parent="Platforms" instance=ExtResource("1_33c3h")]
+position = Vector2(1896, 454)
+
+[node name="Platform13" parent="Platforms" instance=ExtResource("1_33c3h")]
+position = Vector2(2208, 363)
 
 [node name="Platform7" parent="Platforms" instance=ExtResource("1_33c3h")]
 position = Vector2(633, 591)
@@ -79,6 +93,13 @@ position = Vector2(829, 472)
 
 [node name="Platform9" parent="Platforms" instance=ExtResource("1_33c3h")]
 position = Vector2(1009, 344)
+
+[node name="Cactus" type="Sprite2D" parent="Platforms"]
+position = Vector2(655, 462)
+texture = ExtResource("6_dapgu")
+
+[node name="Platform2" parent="Platforms" instance=ExtResource("7_46npw")]
+position = Vector2(276, 400)
 
 [node name="Player" parent="." instance=ExtResource("2_txh4e")]
 
@@ -101,4 +122,9 @@ texture = SubResource("GradientTexture2D_r1llv")
 position = Vector2(1030, 480)
 collision_mask = 2
 
+[node name="Item2" parent="." instance=ExtResource("4_m7so3")]
+position = Vector2(2250, 571)
+collision_mask = 2
+
 [connection signal="body_entered" from="Item" to="Item" method="_on_body_entered"]
+[connection signal="body_entered" from="Item2" to="Item2" method="_on_body_entered"]
