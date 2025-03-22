@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bngdwuwnf3tpv" path="res://kenney_jumper-pack/PNG/Environment/ground_cake_small.png" id="1_6j0a1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ice3o"]
-size = Vector2(198.5, 98.75)
+size = Vector2(200, 98.75)
 
 [node name="Platform" type="StaticBody2D"]
 
