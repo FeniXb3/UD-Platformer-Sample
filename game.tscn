@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b3u2u33vk5tjy"]
+[gd_scene load_steps=18 format=3 uid="uid://b3u2u33vk5tjy"]
 
 [ext_resource type="PackedScene" uid="uid://f03p1kytvcr7" path="res://platform.tscn" id="1_33c3h"]
 [ext_resource type="Texture2D" uid="uid://vbsqcvcalhg3" path="res://kenney_jumper-pack/PNG/Background/bg_layer2.png" id="2_224c4"]
@@ -11,6 +11,13 @@
 [ext_resource type="Texture2D" uid="uid://bvld0tgwaha2b" path="res://kenney_jumper-pack/PNG/Background/bg_layer1.png" id="6_qg458"]
 [ext_resource type="PackedScene" uid="uid://bq5r6n3ei10i6" path="res://cactus_platform.tscn" id="7_k8xh3"]
 [ext_resource type="Texture2D" uid="uid://mdkilip57pcc" path="res://kenney_jumper-pack/PNG/Environment/cactus.png" id="10_53peh"]
+[ext_resource type="Texture2D" uid="uid://cxkow2i8kpas2" path="res://kenney_jumper-pack/PNG/Enemies/flyMan_fly.png" id="12_7skwb"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e3q3f"]
+friction = 0.0
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rg7px"]
+friction = 0.0
 
 [sub_resource type="Gradient" id="Gradient_bxs5i"]
 offsets = PackedFloat32Array(0.276151, 1)
@@ -22,6 +29,9 @@ width = 2048
 height = 1024
 fill_from = Vector2(0.5, 1)
 fill_to = Vector2(0.5, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f2mse"]
+size = Vector2(95, 144)
 
 [node name="Game" type="Node2D"]
 
@@ -94,9 +104,13 @@ position = Vector2(1009, 344)
 
 [node name="Platform2" parent="Platforms" instance=ExtResource("6_1k4y3")]
 position = Vector2(191, 312)
+rotation = -0.445059
+physics_material_override = SubResource("PhysicsMaterial_e3q3f")
 
 [node name="CactusPlatform" parent="Platforms" instance=ExtResource("7_k8xh3")]
 position = Vector2(642, 141)
+rotation = -0.7662
+physics_material_override = SubResource("PhysicsMaterial_rg7px")
 
 [node name="CactusPlatform2" parent="Platforms" instance=ExtResource("7_k8xh3")]
 position = Vector2(1425, 144)
@@ -129,6 +143,17 @@ collision_mask = 2
 [node name="Item2" parent="." instance=ExtResource("4_m7so3")]
 position = Vector2(1850, 489)
 collision_mask = 2
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(343, 374)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+texture = ExtResource("12_7skwb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(0.5, -3)
+shape = SubResource("RectangleShape2D_f2mse")
 
 [connection signal="body_entered" from="Item" to="Item" method="_on_body_entered"]
 [connection signal="body_entered" from="Item2" to="Item2" method="_on_body_entered"]
