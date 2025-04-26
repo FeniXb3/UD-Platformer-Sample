@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://b3u2u33vk5tjy"]
+[gd_scene load_steps=19 format=3 uid="uid://b3u2u33vk5tjy"]
 
 [ext_resource type="PackedScene" uid="uid://f03p1kytvcr7" path="res://platform.tscn" id="1_33c3h"]
+[ext_resource type="Script" uid="uid://bp8hh6dt1g18g" path="res://game.gd" id="1_iotsf"]
 [ext_resource type="Texture2D" uid="uid://vbsqcvcalhg3" path="res://kenney_jumper-pack/PNG/Background/bg_layer2.png" id="2_224c4"]
 [ext_resource type="PackedScene" uid="uid://cchdhug3xfi53" path="res://player.tscn" id="2_txh4e"]
 [ext_resource type="Texture2D" uid="uid://y2hkbv4kfb4g" path="res://kenney_jumper-pack/PNG/Background/bg_layer3.png" id="3_l65th"]
@@ -15,8 +16,9 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gytqv"]
 friction = 0.0
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hv328"]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mfdv2"]
 friction = 0.5
+bounce = 0.5
 
 [sub_resource type="Gradient" id="Gradient_bxs5i"]
 offsets = PackedFloat32Array(0.276151, 1)
@@ -32,7 +34,12 @@ fill_to = Vector2(0.5, 0)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8046v"]
 size = Vector2(95, 138)
 
+[sub_resource type="LabelSettings" id="LabelSettings_mfdv2"]
+font_size = 40
+font_color = Color(0, 0.57, 0.4085, 1)
+
 [node name="Game" type="Node2D"]
+script = ExtResource("1_iotsf")
 
 [node name="Background" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
@@ -110,8 +117,7 @@ position = Vector2(604, 730)
 
 [node name="CactusPlatform2" parent="Platforms" instance=ExtResource("7_hfc2n")]
 position = Vector2(1571, 91)
-rotation = -0.778417
-physics_material_override = SubResource("PhysicsMaterial_hv328")
+physics_material_override = SubResource("PhysicsMaterial_mfdv2")
 
 [node name="Player" parent="." instance=ExtResource("2_txh4e")]
 position = Vector2(1408, 197)
@@ -150,5 +156,23 @@ texture = ExtResource("11_8tvul")
 position = Vector2(1.5, 0)
 shape = SubResource("RectangleShape2D_8046v")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "0"
+label_settings = SubResource("LabelSettings_mfdv2")
+
+[connection signal="body_entered" from="Item" to="." method="_on_item_body_entered"]
 [connection signal="body_entered" from="Item" to="Item" method="_on_body_entered"]
 [connection signal="body_entered" from="Item2" to="Item2" method="_on_body_entered"]
