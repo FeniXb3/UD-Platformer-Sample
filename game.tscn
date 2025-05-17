@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b3u2u33vk5tjy"]
+[gd_scene load_steps=21 format=3 uid="uid://b3u2u33vk5tjy"]
 
 [ext_resource type="PackedScene" uid="uid://f03p1kytvcr7" path="res://platform.tscn" id="1_33c3h"]
 [ext_resource type="Script" uid="uid://cn8xoetu1agi4" path="res://game.gd" id="1_lc2xo"]
@@ -15,7 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://cxkow2i8kpas2" path="res://kenney_jumper-pack/PNG/Enemies/flyMan_fly.png" id="12_7skwb"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e3q3f"]
-friction = 0.0
 bounce = 0.5
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rg7px"]
@@ -38,6 +37,12 @@ size = Vector2(95, 144)
 [sub_resource type="LabelSettings" id="LabelSettings_lc2xo"]
 font_size = 40
 font_color = Color(1, 0.28, 0.28, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_215e1"]
+font_size = 100
+font_color = Color(0.772907, 0.651103, 0.0145043, 1)
+outline_size = 5
+outline_color = Color(1, 0.933333, 0, 1)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_lc2xo")
@@ -112,6 +117,7 @@ position = Vector2(1009, 344)
 [node name="Platform2" parent="Platforms" instance=ExtResource("6_1k4y3")]
 position = Vector2(191, 312)
 physics_material_override = SubResource("PhysicsMaterial_e3q3f")
+constant_linear_velocity = Vector2(100, 0)
 
 [node name="CactusPlatform" parent="Platforms" instance=ExtResource("7_k8xh3")]
 position = Vector2(642, 141)
@@ -170,6 +176,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 10
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="CanvasLayer/MarginContainer"]
 layout_mode = 2
@@ -178,6 +186,13 @@ size_flags_vertical = 0
 text = "0"
 label_settings = SubResource("LabelSettings_lc2xo")
 
-[connection signal="body_entered" from="Item" to="." method="_on_item_body_entered"]
+[node name="Label2" type="Label" parent="CanvasLayer/MarginContainer"]
+visible = false
+layout_mode = 2
+text = "JESTEŚ ZWYCIĘZCĄ!"
+label_settings = SubResource("LabelSettings_215e1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="body_entered" from="Item" to="Item" method="_on_body_entered"]
 [connection signal="body_entered" from="Item2" to="Item2" method="_on_body_entered"]

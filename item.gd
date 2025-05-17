@@ -4,8 +4,10 @@ extends Area2D
 
 
 func _on_body_entered(body: Node2D) -> void:
+	set_deferred("monitoring", false)
 	sprite_2d.hide()
 	gpu_particles_2d.emitting = true
+	SignalBus.coin_picked.emit()
 
 func _on_gpu_particles_2d_finished() -> void:
 	queue_free()
