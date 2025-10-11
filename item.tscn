@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://cco0hdmf66tvr"]
 
 [ext_resource type="Texture2D" uid="uid://d22natk1k12tr" path="res://kenney_jumper-pack/PNG/Items/gold_1.png" id="1_gc5ph"]
-[ext_resource type="Script" path="res://item.gd" id="1_ycmpg"]
+[ext_resource type="Script" uid="uid://ce225apjg2pkp" path="res://item.gd" id="1_ycmpg"]
 [ext_resource type="Texture2D" uid="uid://bqsags1o64f4o" path="res://kenney_jumper-pack/PNG/Items/gold_2.png" id="2_5bhxb"]
 [ext_resource type="Texture2D" uid="uid://bqhkh52wr2wwo" path="res://kenney_jumper-pack/PNG/Items/gold_3.png" id="3_qns7v"]
 [ext_resource type="Texture2D" uid="uid://dr1vt3n5uk0en" path="res://kenney_jumper-pack/PNG/Items/gold_4.png" id="4_waip1"]
@@ -41,8 +41,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ygf60"]
 _data = {
-"RESET": SubResource("Animation_har3d"),
-"rotate": SubResource("Animation_uvled")
+&"RESET": SubResource("Animation_har3d"),
+&"rotate": SubResource("Animation_uvled")
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oejbq"]

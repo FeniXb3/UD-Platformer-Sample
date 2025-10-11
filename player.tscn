@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cchdhug3xfi53"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_4lppc"]
+[ext_resource type="Script" uid="uid://ci5380emd36w6" path="res://player.gd" id="1_4lppc"]
 [ext_resource type="Texture2D" uid="uid://b1ue0poamrjo0" path="res://kenney_jumper-pack/PNG/Players/bunny1_ready.png" id="2_lxyvi"]
 [ext_resource type="Texture2D" uid="uid://cv65t5lorntr" path="res://kenney_jumper-pack/PNG/Players/bunny1_stand.png" id="2_uom28"]
 
@@ -38,8 +38,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_si6oq"]
 _data = {
-"RESET": SubResource("Animation_aaom3"),
-"idle": SubResource("Animation_sihw8")
+&"RESET": SubResource("Animation_aaom3"),
+&"idle": SubResource("Animation_sihw8")
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j5ox4"]
@@ -56,7 +56,7 @@ texture = ExtResource("2_lxyvi")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
 libraries = {
-"": SubResource("AnimationLibrary_si6oq")
+&"": SubResource("AnimationLibrary_si6oq")
 }
 autoplay = "idle"
 
