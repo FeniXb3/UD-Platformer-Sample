@@ -105,9 +105,18 @@ texture = SubResource("GradientTexture2D_r1llv")
 position = Vector2(1030, 480)
 collision_mask = 2
 
+[node name="Item3" parent="." instance=ExtResource("4_m7so3")]
+position = Vector2(138, 774)
+collision_mask = 2
+
 [node name="Item2" parent="." instance=ExtResource("4_m7so3")]
 position = Vector2(1416, 565)
 collision_mask = 2
 
+[node name="Item4" parent="." instance=ExtResource("4_m7so3")]
+position = Vector2(428, 784)
+
 [connection signal="body_entered" from="Item" to="Item" method="_on_body_entered"]
+[connection signal="body_entered" from="Item3" to="Item3" method="_on_body_entered"]
 [connection signal="body_entered" from="Item2" to="Item2" method="_on_body_entered"]
+[connection signal="body_entered" from="Item4" to="Item4" method="_on_body_entered"]
