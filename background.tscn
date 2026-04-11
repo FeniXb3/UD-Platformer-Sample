@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://c4hag48a6wa76"]
+
+[ext_resource type="Texture2D" uid="uid://bvld0tgwaha2b" path="res://kenney_jumper-pack/PNG/Background/bg_layer1.png" id="1_splo0"]
+[ext_resource type="Texture2D" uid="uid://vbsqcvcalhg3" path="res://kenney_jumper-pack/PNG/Background/bg_layer2.png" id="2_eq6nc"]
+[ext_resource type="Texture2D" uid="uid://y2hkbv4kfb4g" path="res://kenney_jumper-pack/PNG/Background/bg_layer3.png" id="3_bpugw"]
+[ext_resource type="Texture2D" uid="uid://bfapujp5p6spg" path="res://kenney_jumper-pack/PNG/Background/bg_layer4.png" id="4_gjjrj"]
+
+[node name="Background" type="Node2D" unique_id=488567567]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Sky" type="Parallax2D" parent="." unique_id=435856062]
+scroll_scale = Vector2(0.1, 1)
+repeat_size = Vector2(2048, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sky" unique_id=1455410451]
+texture = ExtResource("1_splo0")
+centered = false
+
+[node name="Clouds" type="Parallax2D" parent="." unique_id=1512057336]
+scroll_scale = Vector2(0.2, 1)
+repeat_size = Vector2(2048, 0)
+autoscroll = Vector2(10, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Clouds" unique_id=88548953]
+position = Vector2(0, -451)
+texture = ExtResource("2_eq6nc")
+centered = false
+
+[node name="DistantHills" type="Parallax2D" parent="." unique_id=1407531290]
+scroll_scale = Vector2(0.3, 1)
+repeat_size = Vector2(2048, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="DistantHills" unique_id=882301445]
+position = Vector2(0, -451)
+texture = ExtResource("3_bpugw")
+centered = false
+
+[node name="Hills" type="Parallax2D" parent="." unique_id=692933469]
+scroll_scale = Vector2(0.7, 1)
+repeat_size = Vector2(2048, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Hills" unique_id=1161263941]
+position = Vector2(0, -451)
+texture = ExtResource("4_gjjrj")
+centered = false

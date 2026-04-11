@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cekguj5fdvn1i"]
+
+[ext_resource type="PackedScene" uid="uid://c1k87c0tpwxsi" path="res://killzone.tscn" id="1_khqdy"]
+
+[sub_resource type="Gradient" id="Gradient_bxs5i"]
+offsets = PackedFloat32Array(0.276151, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_r1llv"]
+gradient = SubResource("Gradient_bxs5i")
+width = 2048
+height = 1024
+fill_from = Vector2(0.5, 1)
+fill_to = Vector2(0.5, 0)
+
+[node name="BottomKillzone" type="Node2D" unique_id=842652648]
+
+[node name="Killzone" parent="." unique_id=196927584 instance=ExtResource("1_khqdy")]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Parallax2D" type="Parallax2D" parent="Killzone" unique_id=578117351]
+scroll_offset = Vector2(0, -512)
+repeat_size = Vector2(2048, 0)
+repeat_times = 2
+
+[node name="TextureRect" type="TextureRect" parent="Killzone/Parallax2D" unique_id=980047837]
+offset_right = 64.0
+offset_bottom = 64.0
+texture = SubResource("GradientTexture2D_r1llv")

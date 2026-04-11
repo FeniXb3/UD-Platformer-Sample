@@ -1,66 +1,14 @@
 [gd_scene format=3 uid="uid://b3u2u33vk5tjy"]
 
 [ext_resource type="PackedScene" uid="uid://f03p1kytvcr7" path="res://platform.tscn" id="1_33c3h"]
-[ext_resource type="Texture2D" uid="uid://vbsqcvcalhg3" path="res://kenney_jumper-pack/PNG/Background/bg_layer2.png" id="2_224c4"]
+[ext_resource type="PackedScene" uid="uid://c4hag48a6wa76" path="res://background.tscn" id="2_7jktm"]
 [ext_resource type="PackedScene" uid="uid://cchdhug3xfi53" path="res://player.tscn" id="2_txh4e"]
-[ext_resource type="Texture2D" uid="uid://y2hkbv4kfb4g" path="res://kenney_jumper-pack/PNG/Background/bg_layer3.png" id="3_l65th"]
-[ext_resource type="PackedScene" uid="uid://c1k87c0tpwxsi" path="res://killzone.tscn" id="3_re4br"]
 [ext_resource type="PackedScene" uid="uid://cco0hdmf66tvr" path="res://item.tscn" id="4_m7so3"]
-[ext_resource type="Texture2D" uid="uid://bfapujp5p6spg" path="res://kenney_jumper-pack/PNG/Background/bg_layer4.png" id="4_ui3jm"]
-[ext_resource type="Texture2D" uid="uid://bvld0tgwaha2b" path="res://kenney_jumper-pack/PNG/Background/bg_layer1.png" id="6_qg458"]
-
-[sub_resource type="Gradient" id="Gradient_bxs5i"]
-offsets = PackedFloat32Array(0.276151, 1)
-colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_r1llv"]
-gradient = SubResource("Gradient_bxs5i")
-width = 2048
-height = 1024
-fill_from = Vector2(0.5, 1)
-fill_to = Vector2(0.5, 0)
+[ext_resource type="PackedScene" uid="uid://cekguj5fdvn1i" path="res://bottom_killzone.tscn" id="5_ryrav"]
 
 [node name="Game" type="Node2D" unique_id=1236119151]
 
-[node name="Background" type="Node2D" parent="." unique_id=1010558926]
-metadata/_edit_lock_ = true
-metadata/_edit_group_ = true
-
-[node name="Sky" type="Parallax2D" parent="Background" unique_id=466260238]
-scroll_scale = Vector2(0.1, 1)
-repeat_size = Vector2(2048, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="Background/Sky" unique_id=1947285698]
-texture = ExtResource("6_qg458")
-centered = false
-
-[node name="Clouds" type="Parallax2D" parent="Background" unique_id=1589581944]
-scroll_scale = Vector2(0.2, 1)
-repeat_size = Vector2(2048, 0)
-autoscroll = Vector2(10, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="Background/Clouds" unique_id=339054852]
-position = Vector2(0, -451)
-texture = ExtResource("2_224c4")
-centered = false
-
-[node name="DistantHills" type="Parallax2D" parent="Background" unique_id=2139133194]
-scroll_scale = Vector2(0.3, 1)
-repeat_size = Vector2(2048, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="Background/DistantHills" unique_id=1253664894]
-position = Vector2(0, -451)
-texture = ExtResource("3_l65th")
-centered = false
-
-[node name="Hills" type="Parallax2D" parent="Background" unique_id=799067088]
-scroll_scale = Vector2(0.7, 1)
-repeat_size = Vector2(2048, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="Background/Hills" unique_id=1949138543]
-position = Vector2(0, -451)
-texture = ExtResource("4_ui3jm")
-centered = false
+[node name="Background" parent="." unique_id=488567567 instance=ExtResource("2_7jktm")]
 
 [node name="Platforms" type="Node2D" parent="." unique_id=1637482164]
 position = Vector2(23, 409)
@@ -80,22 +28,12 @@ position = Vector2(829, 472)
 [node name="Platform9" parent="Platforms" unique_id=1854713145 instance=ExtResource("1_33c3h")]
 position = Vector2(1009, 344)
 
+[node name="Items" type="Node2D" parent="." unique_id=698637400]
+
+[node name="Item" parent="Items" unique_id=1251286297 instance=ExtResource("4_m7so3")]
+position = Vector2(1030, 480)
+
 [node name="Player" parent="." unique_id=1297780702 instance=ExtResource("2_txh4e")]
 
-[node name="Killzone" parent="." unique_id=1056935528 instance=ExtResource("3_re4br")]
+[node name="BottomKillzone" parent="." unique_id=842652648 instance=ExtResource("5_ryrav")]
 position = Vector2(154, 1352)
-metadata/_edit_lock_ = true
-metadata/_edit_group_ = true
-
-[node name="Parallax2D" type="Parallax2D" parent="Killzone" unique_id=1009647263]
-scroll_offset = Vector2(0, -512)
-repeat_size = Vector2(2048, 0)
-repeat_times = 2
-
-[node name="TextureRect" type="TextureRect" parent="Killzone/Parallax2D" unique_id=271922171]
-offset_right = 64.0
-offset_bottom = 64.0
-texture = SubResource("GradientTexture2D_r1llv")
-
-[node name="Item" parent="." unique_id=1251286297 instance=ExtResource("4_m7so3")]
-position = Vector2(1030, 480)
