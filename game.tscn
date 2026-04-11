@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b3u2u33vk5tjy"]
+[gd_scene format=3 uid="uid://b3u2u33vk5tjy"]
 
 [ext_resource type="PackedScene" uid="uid://f03p1kytvcr7" path="res://platform.tscn" id="1_33c3h"]
 [ext_resource type="Texture2D" uid="uid://vbsqcvcalhg3" path="res://kenney_jumper-pack/PNG/Background/bg_layer2.png" id="2_224c4"]
@@ -20,84 +20,84 @@ height = 1024
 fill_from = Vector2(0.5, 1)
 fill_to = Vector2(0.5, 0)
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" unique_id=1236119151]
 
-[node name="Background" type="Node2D" parent="."]
+[node name="Background" type="Node2D" parent="." unique_id=1010558926]
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
-[node name="Sky" type="Parallax2D" parent="Background"]
+[node name="Sky" type="Parallax2D" parent="Background" unique_id=466260238]
 scroll_scale = Vector2(0.1, 1)
 repeat_size = Vector2(2048, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="Background/Sky"]
+[node name="Sprite2D" type="Sprite2D" parent="Background/Sky" unique_id=1947285698]
 texture = ExtResource("6_qg458")
 centered = false
 
-[node name="Clouds" type="Parallax2D" parent="Background"]
+[node name="Clouds" type="Parallax2D" parent="Background" unique_id=1589581944]
 scroll_scale = Vector2(0.2, 1)
 repeat_size = Vector2(2048, 0)
 autoscroll = Vector2(10, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="Background/Clouds"]
+[node name="Sprite2D" type="Sprite2D" parent="Background/Clouds" unique_id=339054852]
 position = Vector2(0, -451)
 texture = ExtResource("2_224c4")
 centered = false
 
-[node name="DistantHills" type="Parallax2D" parent="Background"]
+[node name="DistantHills" type="Parallax2D" parent="Background" unique_id=2139133194]
 scroll_scale = Vector2(0.3, 1)
 repeat_size = Vector2(2048, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="Background/DistantHills"]
+[node name="Sprite2D" type="Sprite2D" parent="Background/DistantHills" unique_id=1253664894]
 position = Vector2(0, -451)
 texture = ExtResource("3_l65th")
 centered = false
 
-[node name="Hills" type="Parallax2D" parent="Background"]
+[node name="Hills" type="Parallax2D" parent="Background" unique_id=799067088]
 scroll_scale = Vector2(0.7, 1)
 repeat_size = Vector2(2048, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="Background/Hills"]
+[node name="Sprite2D" type="Sprite2D" parent="Background/Hills" unique_id=1949138543]
 position = Vector2(0, -451)
 texture = ExtResource("4_ui3jm")
 centered = false
 
-[node name="Platforms" type="Node2D" parent="."]
+[node name="Platforms" type="Node2D" parent="." unique_id=1637482164]
 position = Vector2(23, 409)
 
-[node name="Platform" parent="Platforms" instance=ExtResource("1_33c3h")]
+[node name="Platform" parent="Platforms" unique_id=1641891911 instance=ExtResource("1_33c3h")]
 position = Vector2(78, 599)
 
-[node name="Platform6" parent="Platforms" instance=ExtResource("1_33c3h")]
+[node name="Platform6" parent="Platforms" unique_id=350370003 instance=ExtResource("1_33c3h")]
 position = Vector2(357, 591)
 
-[node name="Platform7" parent="Platforms" instance=ExtResource("1_33c3h")]
+[node name="Platform7" parent="Platforms" unique_id=925763824 instance=ExtResource("1_33c3h")]
 position = Vector2(633, 591)
 
-[node name="Platform8" parent="Platforms" instance=ExtResource("1_33c3h")]
+[node name="Platform8" parent="Platforms" unique_id=1653763194 instance=ExtResource("1_33c3h")]
 position = Vector2(829, 472)
 
-[node name="Platform9" parent="Platforms" instance=ExtResource("1_33c3h")]
+[node name="Platform9" parent="Platforms" unique_id=1854713145 instance=ExtResource("1_33c3h")]
 position = Vector2(1009, 344)
 
-[node name="Player" parent="." instance=ExtResource("2_txh4e")]
+[node name="Player" parent="." unique_id=1297780702 instance=ExtResource("2_txh4e")]
 
-[node name="Killzone" parent="." instance=ExtResource("3_re4br")]
+[node name="Killzone" parent="." unique_id=1056935528 instance=ExtResource("3_re4br")]
 position = Vector2(154, 1352)
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
-[node name="Parallax2D" type="Parallax2D" parent="Killzone"]
+[node name="Parallax2D" type="Parallax2D" parent="Killzone" unique_id=1009647263]
 scroll_offset = Vector2(0, -512)
 repeat_size = Vector2(2048, 0)
 repeat_times = 2
 
-[node name="TextureRect" type="TextureRect" parent="Killzone/Parallax2D"]
+[node name="TextureRect" type="TextureRect" parent="Killzone/Parallax2D" unique_id=271922171]
 offset_right = 64.0
 offset_bottom = 64.0
 texture = SubResource("GradientTexture2D_r1llv")
 
-[node name="Item" parent="." instance=ExtResource("4_m7so3")]
+[node name="Item" parent="." unique_id=1251286297 instance=ExtResource("4_m7so3")]
 position = Vector2(1030, 480)
 collision_mask = 2
 
