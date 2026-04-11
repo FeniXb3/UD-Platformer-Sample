@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cchdhug3xfi53"]
+[gd_scene format=3 uid="uid://cchdhug3xfi53"]
 
 [ext_resource type="Script" uid="uid://ci5380emd36w6" path="res://player.gd" id="1_4lppc"]
 [ext_resource type="Texture2D" uid="uid://b1ue0poamrjo0" path="res://kenney_jumper-pack/PNG/Players/bunny1_ready.png" id="2_lxyvi"]
@@ -46,25 +46,22 @@ _data = {
 radius = 56.0
 height = 168.0
 
-[node name="Player" type="CharacterBody2D"]
-position = Vector2(78, 123)
+[node name="Player" type="CharacterBody2D" unique_id=59441666]
 collision_layer = 2
 script = ExtResource("1_4lppc")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1193046811]
 texture = ExtResource("2_lxyvi")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
-libraries = {
-&"": SubResource("AnimationLibrary_si6oq")
-}
-autoplay = "idle"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=1226384033]
+libraries/ = SubResource("AnimationLibrary_si6oq")
+autoplay = &"idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=848847361]
 position = Vector2(0, 14)
 shape = SubResource("CapsuleShape2D_j5ox4")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=174847174]
 limit_bottom = 1800
 limit_smoothed = true
 position_smoothing_enabled = true

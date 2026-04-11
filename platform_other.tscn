@@ -1,15 +1,15 @@
-[gd_scene format=3 uid="uid://f03p1kytvcr7"]
+[gd_scene format=3 uid="uid://bjpalsw4tlkaj"]
 
-[ext_resource type="Texture2D" uid="uid://bngdwuwnf3tpv" path="res://kenney_jumper-pack/PNG/Environment/ground_cake_small.png" id="1_mi635"]
+[ext_resource type="Texture2D" uid="uid://bbslwcygkim75" path="res://kenney_jumper-pack/PNG/Environment/ground_stone_broken.png" id="1_5iwwg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ice3o"]
-size = Vector2(198.5, 98.75)
+size = Vector2(369, 98.75)
 
 [node name="Platform" type="StaticBody2D" unique_id=2005737346]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1210372838]
-texture = ExtResource("1_mi635")
+texture = ExtResource("1_5iwwg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=289246619]
-position = Vector2(0.75, 0.625)
+position = Vector2(-0.5, 0.625)
 shape = SubResource("RectangleShape2D_ice3o")

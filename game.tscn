@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://f03p1kytvcr7" path="res://platform.tscn" id="1_33c3h"]
 [ext_resource type="PackedScene" uid="uid://c4hag48a6wa76" path="res://background.tscn" id="2_7jktm"]
 [ext_resource type="PackedScene" uid="uid://cchdhug3xfi53" path="res://player.tscn" id="2_txh4e"]
+[ext_resource type="PackedScene" uid="uid://bjpalsw4tlkaj" path="res://platform_other.tscn" id="3_ryrav"]
 [ext_resource type="PackedScene" uid="uid://cco0hdmf66tvr" path="res://item.tscn" id="4_m7so3"]
 [ext_resource type="PackedScene" uid="uid://cekguj5fdvn1i" path="res://bottom_killzone.tscn" id="5_ryrav"]
 
@@ -28,12 +29,33 @@ position = Vector2(829, 472)
 [node name="Platform9" parent="Platforms" unique_id=1854713145 instance=ExtResource("1_33c3h")]
 position = Vector2(1009, 344)
 
+[node name="Platform10" parent="Platforms" unique_id=2005737346 instance=ExtResource("1_33c3h")]
+position = Vector2(1347, 320)
+
+[node name="Platform11" parent="Platforms" unique_id=1684450375 instance=ExtResource("1_33c3h")]
+position = Vector2(1665, 304)
+
+[node name="Platform13" parent="Platforms" unique_id=2105007613 instance=ExtResource("1_33c3h")]
+position = Vector2(6328, 945)
+
+[node name="Platform14" parent="Platforms" unique_id=514689296 instance=ExtResource("1_33c3h")]
+position = Vector2(4292, 645)
+
+[node name="Platform12" parent="Platforms" unique_id=619914929 instance=ExtResource("1_33c3h")]
+position = Vector2(2256, 345)
+
+[node name="Platform2" parent="Platforms" unique_id=139915596 instance=ExtResource("3_ryrav")]
+position = Vector2(61, 147)
+
+[node name="Player" parent="." unique_id=1297780702 instance=ExtResource("2_txh4e")]
+
 [node name="Items" type="Node2D" parent="." unique_id=698637400]
 
 [node name="Item" parent="Items" unique_id=1251286297 instance=ExtResource("4_m7so3")]
 position = Vector2(1030, 480)
 
-[node name="Player" parent="." unique_id=1297780702 instance=ExtResource("2_txh4e")]
+[node name="Item2" parent="Items" unique_id=1893066716 instance=ExtResource("4_m7so3")]
+position = Vector2(2070, 472)
 
 [node name="BottomKillzone" parent="." unique_id=842652648 instance=ExtResource("5_ryrav")]
 position = Vector2(154, 1352)
